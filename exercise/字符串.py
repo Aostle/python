@@ -19,3 +19,12 @@ def check(string, sub_str):
 string = "www.runoob.com"
 sub_str ="runoob"
 check(string, sub_str)
+
+
+import re
+def findurl(str):
+    url =  re.findall('https?://(?:[-\w.]|(?:%[\da-fA-F]{2}))+',str)
+    return url
+
+str = 'Runoob 的网页地址为：https://www.runoob.com，Google 的网页地址为：https://www.google.com'
+print('urls: ', findurl(str))
